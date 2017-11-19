@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.case-opening{
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+}
+
+.my-img{
+    width: 200px;
+    height: 150px;
+    padding: 4px;
+    margin: auto;
+    border: 1px solid #000000;
+}
+
+.central-btn{
+    width: 200px;
+    padding: 2px;
+    margin: auto;
+}
