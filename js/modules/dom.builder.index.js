@@ -24,7 +24,7 @@ var domBuilderIndex = (function(){
 
     function initListeners() {
         openCaseBtn.addEventListener(eventTypeClick, openCase);
-        //tryAgainBtn.addEventListener(eventTypeClick, reset);
+        //tryAgainBtn.addEventListener(eventTypeClick, reset); 
     }
 
     function openCase(){
