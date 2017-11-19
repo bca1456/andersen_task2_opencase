@@ -1,11 +1,10 @@
 var outputDropId = "outputDrop"; //имя дропа
 var outputDropRarityId = "outputDropRarity";
+var chancesInfoId = "chancesInfo";
 
 var imgCaseId = "imgCase"; //поле для картинки
 
 var openCaseBtnId = "btnOpenCase"; //кнопка Open Case
-//var tryAgainBtnId = "btnTryAgain";
-
 
 var eventTypeClick = "click";
 

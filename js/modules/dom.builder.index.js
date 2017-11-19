@@ -1,11 +1,13 @@
 var domBuilderIndex = (function(){
     var openCaseBtn;
-    //var tryAgainBtn;
 
     var outputDropText;
     var outputDropRarityText;
+    var chancesInfoText;
 
     var caseImg;
+
+    let droppedGun;
 
 
     function init() {
@@ -16,30 +18,39 @@ var domBuilderIndex = (function(){
 
     function initControls() {
         openCaseBtn = document.getElementById(openCaseBtnId);
-        //tryAgainBtn = document.getElementById(tryAgainBtnId);
+        
         outputDropText = document.getElementById(outputDropId);
         outputDropRarityText = document.getElementById(outputDropRarityId);
+        chancesInfoText = document.getElementById(chancesInfoId);
+        
         caseImg = document.getElementById(imgCaseId);
     }
 
     function initListeners() {
-        openCaseBtn.addEventListener(eventTypeClick, openCase);
-        //tryAgainBtn.addEventListener(eventTypeClick, reset); 
+        openCaseBtn.addEventListener(eventTypeClick, openCase); 
     }
 
     function openCase(){
         randomValues();
-        let droppedGun = new Weapon(dropNameNumber, dropRarityNumber);
+        caseImg.className += " shake";
+        droppedGun = new Weapon(dropNameNumber, dropRarityNumber);
         console.log(droppedGun.getWeaponName() + "   " + droppedGun.getImageUrl() + "    " + droppedGun.getWeaponRarity());      
-        caseImg.src = droppedGun.getImageUrl();
-        outputDropText.innerHTML = droppedGun.getWeaponName();
-        outputDropRarityText.innerHTML = droppedGun.getWeaponRarity();
+        setTimeout(setNewValues, 2000);//2sec
+        setTimeout(reset, 4000); //4sec
     }
 
+    function setNewValues(){
+        caseImg.src = droppedGun.getImageUrl();
+        caseImg.className = "my-img animated";
+        outputDropText.innerHTML = droppedGun.getWeaponName();
+        outputDropRarityText.innerHTML = droppedGun.getWeaponRarity();
+        openCaseBtn.style.visibility = "hidden";
+        chancesInfoText.style.visibility = "hidden";
+    }
 
-    /*function reset(){
+    function reset(){
         window.location.href=window.location.href
-    }*/
+    }
 
     return {
         init: init
